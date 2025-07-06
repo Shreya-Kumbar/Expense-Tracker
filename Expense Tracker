@@ -84,6 +84,7 @@ def show_expenses_by_date():
         print("❌ Expense file not found.")
 
 def show_expense_table():
+    # shows the values in a clean and neat tabular form.
     try:
         with open(file_name, "r") as f:
             reader = list(csv.reader(f))
@@ -94,6 +95,7 @@ def show_expense_table():
         print("❌ File not found.")
 
 def export_expenses():
+    # for saving your csv file for backup or for sending it to someone.
     new_file = input("Enter name of export file (e.g. export.csv): ")
     try:
         with open(file_name, "r") as original, open(new_file, "w", newline="") as new:
@@ -105,6 +107,5 @@ def export_expenses():
 initialize_file()
 add_expense()
 show_total_expense()
-show_expenses_by_date()
 show_expense_table()
 export_expenses()
